@@ -11,3 +11,10 @@
 5th - Run this script file - **password_policy.sh** to set password policy.
 
 6th - Run this script file - **setup_web_backup.sh**  to install Apache web server and Nginx services, enable services, start services, change Nginx Port to 8080, Creating backup directory, Create BACKUP_FILE to = "/backups/"
+
+7th - Run this command to schedule backups - 
+sudo crontab -e
+add to 
+0 0 * * 2 /usr/local/bin/apache_backup.sh
+5 0 * * 2 /usr/local/bin/nginx_backup.sh
+save and exit
