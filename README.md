@@ -16,5 +16,7 @@
 sudo crontab -e
 add to 
 0 0 * * 2 /usr/local/bin/apache_backup.sh
-5 0 * * 2 /usr/local/bin/nginx_backup.sh
+0 0 * * 2 /usr/local/bin/nginx_backup.sh
 save and exit
+
+Check Evidence  file - Linux Assignment.docx 
