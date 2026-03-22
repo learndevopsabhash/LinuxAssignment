@@ -27,8 +27,8 @@ then
 else
     echo "Nginx not installed. Installing..."
     sudo dnf install -y nginx
-    sudo sed -i 's/listen 80;/listen 8080;/g' /etc/nginx/nginx.conf
-    sudo sed -i 's/listen \[::\]:80;/listen [::]:8080;/g' /etc/nginx/nginx.conf
+    sudo sed -i -E 's/^(\s*)listen\s+80;/\1listen 8080;/' /etc/nginx/nginx.conf
+    sudo sed -i -E 's/^(\s*)listen\s+\[::\]:80;/\1listen [::]:8080;/' /etc/nginx/nginx.conf
     sudo nginx -t
     sudo systemctl enable nginx
     sudo systemctl restart nginx
